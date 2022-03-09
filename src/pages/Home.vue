@@ -1,12 +1,8 @@
 <template>
   <b-col>
     <h2>Film Home Page</h2>
-
-    <p
-        v-for="film in films"
-        :key="films._id"
-    >
-    <router-link :to="{name:'festivals_show', params: { id: film._id}}">{{ film.title }}</router-link>
+    <p>
+    <router-link :to="{name:'FilmHome'}"></router-link>
     </p>
   </b-col>
 </template>
@@ -28,10 +24,10 @@ export default {
   methods: {
       getData() {
           axios
-            .get("")
+            .get("https://api.themoviedb.org")
             .then(response => {
                 console.log(response.data)
-                this.festivals = response.data
+                this.films = response.data
             })
             .catch(error => console.log(error))
       }

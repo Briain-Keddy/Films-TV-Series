@@ -20,6 +20,25 @@ export default {
   components: {
     MyNavBar,
     MyFooter
+  },
+  data(){
+    return{
+      loggedIn: false
+    }
+  },
+  created(){
+    localStorage.getItem('token') ? this.loggedIn = true : this.loggedIn = false
+  },
+  methods:{
+    setLoggedIn(token){
+      this.loggedIn = true
+      localStorage.setItem('token', token)
+    },
+    setLoggedOut(){
+      this.loggedIn = false
+      localStorage.removeItem('token')
+      this.$router.replace({name: 'home'})
+    }
   }
 }
 </script>

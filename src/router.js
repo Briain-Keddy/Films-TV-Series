@@ -13,10 +13,15 @@ export default new Router({
             name: 'home',
             component: Home
         },
+        // {
+        //     path: '/list_of_film',
+        //     name: 'film',
+        //     component: 'Film'
+        // },
         {
-            path: '/list_of_film',
-            name: 'film',
-            component: 'Film'
+            path: '/login',
+            name: 'login',
+            component: () => import("./pages/Login.vue")
         },
         {
             path: "/film/:id",
