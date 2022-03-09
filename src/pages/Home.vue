@@ -1,14 +1,12 @@
 <template>
   <b-col>
-    <h2>Welcome to the Bríain Films and Tv Series Website</h2>
+    <h2>Film Home Page</h2>
 
-    <div v-if="!loggedIn">
-      Email: <input type="email" v-model="form.email" /> <br>
-      Password: <input type="password" v-model="form.password" />
-      <button @click="login()">Submit</button>
-    </div>
-    <p v-else>
-      you are logged in
+    <p
+        v-for="film in films"
+        :key="films._id"
+    >
+    <router-link :to="{name:'festivals_show', params: { id: film._id}}">{{ film.title }}</router-link>
     </p>
   </b-col>
 </template>
@@ -17,36 +15,29 @@
 import axios from 'axios'
 
 export default {
-  name: "Home",
-  components: {
-  },
-  props:{
-    loggedIn: Boolean
-  },
+  name: "FilmHome",
+  components: {},
   data(){
-    return {
-      form: {
-        email: "admin@festivals.ie",
-        password:"secret"
+      return {
+          films: []
       }
-    }
   },
-  methods:{
-    login(){
-      axios
-        .post('', {
-          email: this.form.email,
-          password: this.form.password
-        })
-        .then(response => {
-          // console.log(response.data.token)
-          this.$emit('login', response.data.token)
-        })
-        .catch(error => {
-          console.log(error)
-          console.log(error.response.data.message)
-        })
-    }
+  mounted(){
+      this.getData()
+  },
+  methods: {
+      getData() {
+          axios
+            .get("")
+            .then(response => {
+                console.log(response.data)
+                this.festivals = response.data
+            })
+            .catch(error => console.log(error))
+      }
   }
 };
 </script>
+
+<style>
+</style>

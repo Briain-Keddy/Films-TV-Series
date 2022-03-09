@@ -1,0 +1,52 @@
+<template>
+  <b-col>
+    <h2>Film Page</h2>
+    <p>
+      {{ film.title }}
+    </p>
+    <p>
+      {{ film.description }}
+    </p>
+  </b-col>
+</template>
+
+<script>
+import axios from 'axios'
+
+export default {
+  name: "Film",
+  components: {},
+  data(){
+      return {
+          film: {}
+      }
+  },
+  mounted(){
+      this.getData()
+  },
+  methods: {
+      getData() {
+
+        let token = localStorage.getItem('token')
+
+          axios
+            .get(`https://imdb-api.com/api/Title/${this.$route.params.id}`,
+            {
+              headers: {
+                "Authorization": `Bearer ${token}`
+              }
+            })
+            .then(response => {
+                console.log(response.data)
+                this.film = response.data
+            })
+            .catch(error => {
+              console.log(error)
+              this.$emit('invalid-token')
+            })
+      }
+  }
+};
+</script>
+<style>
+</style>

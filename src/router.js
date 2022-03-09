@@ -12,6 +12,16 @@ export default new Router({
             path: '/',
             name: 'home',
             component: Home
+        },
+        {
+            path: '/list_of_film',
+            name: 'film',
+            component: 'Film'
+        },
+        {
+            path: "/film/:id",
+            name: "film_name",
+            component: () => import("./pages/Film.vue")
         }
     ]
 })
