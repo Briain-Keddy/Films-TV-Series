@@ -16,6 +16,8 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
+          <router-link class="nav-link" to="/login">Login</router-link>
+          <router-link class="nav-link" to="/register">Register</router-link>
         </div>
       </div>
       <button v-if="loggedIn" @click="logout" class="btn btn-outline-info my-2 my-sm-0 btn-sm">Logout</button>

@@ -1,10 +1,11 @@
 <template>
   <b-col>
-    <h2>Login</h2>
+    <h2>Register</h2>
     <div v-if="!loggedIn">
-      Email: <input type="email" v-model="form.email" /><br>
-      Password: <input type="password" v-model="form.password" /><br>
-      <button @click="login()">Submit</button>
+      Name: <input type="name" v-model="form.name" /><br><br>
+      Email: <input type="email" v-model="form.email" /><br><br>
+      Password: <input type="password" v-model="form.password" /><br><br>
+      <button @click="register()">Submit</button>
     </div>
   </b-col>
 </template>
@@ -13,7 +14,7 @@
 import axios from 'axios'
 
 export default {
-  name: "Login",
+  name: "Register",
   components: {},
   props:{
       loggedIn: Boolean
@@ -21,21 +22,23 @@ export default {
   data(){
       return {
           form: {
+              name: "",
               email: "",
               password: ""
           }
       }
   },
   methods: {
-      login() {
+      register() {
           axios
             .post('https://localhost:3000', {
+                name: this.form.name,
                 email: this.form.email,
                 password: this.form.password
             })
             .then(response => {
                 console.log(response.data)
-                this.$emit ('login', response.data.token)
+                this.$emit ('register', response.data.token)
             })
             .catch(error => console.log(error))
       }

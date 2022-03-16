@@ -34,8 +34,6 @@ export default {
             {
               headers: {
                 //"Authorization": `Bearer ${token}`
-                'x-rapidapi-host': 'https://imdb-movie-data.p.rapidapi.com/movie/',
-                'x-rapidapi-key': 'c108cc3cf6msh8641be4ac6657adp140f2cjsn9146e9fb0049'
               }
             })
             .then(response => {
@@ -50,5 +48,6 @@ export default {
   }
 };
 </script>
+
 <style>
 </style>

@@ -24,9 +24,24 @@ export default new Router({
             component: () => import("./pages/Login.vue")
         },
         {
+            path: '/register',
+            name: 'register',
+            component: () => import("./pages/Register.vue")
+        },
+        {
             path: "/film/:id",
             name: "film_name",
             component: () => import("./pages/Film.vue")
+        },
+        {
+            path: "about",
+            name: "about",
+            component: () => import("./pages/About.vue")
+        },
+        {
+            path: "contact",
+            name: "contact",
+            component: () => import("./pages/Contact.vue")
         }
     ]
 })
