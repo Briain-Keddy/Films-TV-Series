@@ -1,10 +1,14 @@
 <template>
-  <b-col>
-    <h2>Film Home Page</h2>
-    <p>
-    <router-link :to="{name:'FilmHome'}"></router-link>
-    </p>
-  </b-col>
+  <b-container>
+    <b-row>
+      <b-col>
+        <h2>Film Home</h2>
+        <p>
+        <router-link :to="{name:'FilmHome'}"></router-link>
+        </p>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>

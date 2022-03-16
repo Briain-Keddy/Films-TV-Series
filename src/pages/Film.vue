@@ -34,6 +34,7 @@ export default {
             {
               headers: {
                 //"Authorization": `Bearer ${token}`
+                //"Authorization": `Bearer 06fa868e7cce611df3b704bc35194f88`
               }
             })
             .then(response => {
