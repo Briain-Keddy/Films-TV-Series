@@ -1,21 +1,16 @@
 <template>
-  <b-container>
-    <b-row>
-      <b-col>
-        <h2>Film Home</h2>
-        <p>
-        <router-link :to="{name:'FilmHome'}"></router-link>
-        </p>
-      </b-col>
-    </b-row>
-  </b-container>
+  <b-col>
+    <h2>Film Home</h2>
+    <p>
+    </p>
+  </b-col>
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
-  name: "FilmHome",
+  name: "home",
   components: {},
   data(){
       return {

@@ -1,10 +1,11 @@
 <template>
   <b-col>
-    <h2>Film Page</h2>
-    <p>
-      <b-img src="https://image.tmdb.org/t/p/w200/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg" fluid alt="Responsive image"></b-img>
-      {{ film.title }}<br>
-      {{ film.overview}}
+    <h2>Most Popular Films</h2>
+    <p
+      v-for="film in films"
+      :key="film.id"
+    >
+    <router-link :to="{name:'film_show', params: {id: film.id}}">{{ film.title }}</router-link>
     </p>
   </b-col>
 </template>
@@ -13,11 +14,11 @@
 import axios from 'axios'
 
 export default {
-  name: "Film",
+  name: "Popular",
   components: {},
   data(){
       return {
-          film: {}
+          films: []
       }
   },
   mounted(){
@@ -27,15 +28,14 @@ export default {
       getData() {
 
           axios
-            .get(`https://api.themoviedb.org/3/movie/${this.$route.params.id}?api_key=06fa868e7cce611df3b704bc35194f88`,
+            .get(`https://api.themoviedb.org/3/movie/popular?api_key=06fa868e7cce611df3b704bc35194f88`,
             {
               headers: {
-                //"Authorization": `Bearer ${token}`
               }
             })
             .then(response => {
-                console.log(response.data)
-                this.film = response.data
+                console.log(response.data.results)
+                this.films = response.data.results
 
             })
             .catch(error => {

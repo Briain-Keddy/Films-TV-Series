@@ -31,8 +31,8 @@ export default {
   methods: {
       register() {
           axios
-            .post('https://localhost:3000', {
-                name: this.form.name,
+            .post('http://localhost:3000/register', {
+                full_name: this.form.name,
                 email: this.form.email,
                 password: this.form.password
             })

@@ -1,27 +1,13 @@
 <template>
-  <b-container>
-    <b-row>
-      <b-col>
-        <h2>Contact Page</h2>
-        <p>
-          hgguuu
-        </p>
-      </b-col>
-    </b-row>
-  </b-container>
+  <b-col>
+    <h2>Contact Page</h2>
+    
+  </b-col>
 </template>
 
 <script>
 
-export default {
-  name: "Contact",
-  components: {},
-  mounted(){
-  },
-  methods: {
-  }
-};
-</script>>
+</script>
 
 <style>
 </style>

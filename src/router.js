@@ -13,11 +13,11 @@ export default new Router({
             name: 'home',
             component: Home
         },
-        // {
-        //     path: '/list_of_film',
-        //     name: 'film',
-        //     component: 'Film'
-        // },
+        {
+             path: '/popular',
+             name: 'popular',
+             component: () => import("./pages/Popular.vue")
+        },
         {
             path: '/login',
             name: 'login',
@@ -30,16 +30,16 @@ export default new Router({
         },
         {
             path: "/film/:id",
-            name: "film_name",
+            name: "film_show",
             component: () => import("./pages/Film.vue")
         },
         {
-            path: "about",
+            path: "/about",
             name: "about",
             component: () => import("./pages/About.vue")
         },
         {
-            path: "contact",
+            path: "/contact",
             name: "contact",
             component: () => import("./pages/Contact.vue")
         }

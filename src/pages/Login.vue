@@ -29,7 +29,7 @@ export default {
   methods: {
       login() {
           axios
-            .post('https://localhost:3000', {
+            .post('http://localhost:3000/login', {
                 email: this.form.email,
                 password: this.form.password
             })
