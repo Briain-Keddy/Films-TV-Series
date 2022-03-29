@@ -1,15 +1,23 @@
 <template>
-  <b-col>
-    <h2>Film Page</h2>
-    <p>
-      <b-img src="https://image.tmdb.org/t/p/w200/qsdjk9oAKSQMWs0Vt5Pyfh6O4GZ.jpg" fluid alt="Responsive image"></b-img>
-      {{ film.title }}<br>
-      {{ film.overview}}
-    </p>
-  </b-col>
+  <b-row>
+    <b-col>    
+        <p class="title">
+          {{ film.title }}
+        </p>
+          {{ film.overview }}<br>
+
+        <p
+          v-for="genre in genres"
+          :key="genre.id"
+        >
+          {{ genre.name }}
+        </p>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
+
 import axios from 'axios'
 
 export default {
@@ -17,7 +25,8 @@ export default {
   components: {},
   data(){
       return {
-          film: {}
+          film: {},
+          genres: []
       }
   },
   mounted(){
@@ -30,7 +39,6 @@ export default {
             .get(`https://api.themoviedb.org/3/movie/${this.$route.params.id}?api_key=06fa868e7cce611df3b704bc35194f88`,
             {
               headers: {
-                //"Authorization": `Bearer ${token}`
               }
             })
             .then(response => {
@@ -47,4 +55,8 @@ export default {
 </script>
 
 <style>
+.title{
+  font-size: 24;
+  font-weight: bold;
+}
 </style>

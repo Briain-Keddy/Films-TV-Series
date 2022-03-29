@@ -1,13 +1,19 @@
 <template>
-  <b-col>
-    <h2>Most Popular Films</h2>
-    <p
-      v-for="film in films"
-      :key="film.id"
-    >
-    <router-link :to="{name:'film_show', params: {id: film.id}}">{{ film.title }}</router-link>
-    </p>
-  </b-col>
+  <b-container>
+    <b-row cols="12">
+      <b-col >
+        <h2>Most Popular Films</h2>
+      </b-col>
+    </b-row>
+    <b-row cols="4" sm="6"> 
+      <b-col
+        v-for="film in films"
+        :key="film.id"
+      >
+        <router-link :to="{name:'film_show', params: {id: film.id}}">{{ film.title }}</router-link> 
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -47,4 +53,5 @@ export default {
 </script>
 
 <style>
+
 </style>

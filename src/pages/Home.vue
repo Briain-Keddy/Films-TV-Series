@@ -1,9 +1,11 @@
 <template>
-  <b-col>
-    <h2>Film Home</h2>
-    <p>
-    </p>
-  </b-col>
+  <b-container>
+    <b-row cols="12">
+      <b-col >
+        <h2>Home Films</h2>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
