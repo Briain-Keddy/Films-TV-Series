@@ -5,6 +5,14 @@
         <h2>Home Films</h2>
       </b-col>
     </b-row>
+    <b-row cols="9">
+      <h4>Upcoming Films</h4>
+      <a href="http://localhost:8080/upcoming">Upcoming Films</a>
+    </b-row>
+    <b-row cols="4">
+      <h4>Movie Review</h4>
+      <a href="http://localhost:8080/reviews">Reviews</a>
+    </b-row>
   </b-container>
 </template>
 

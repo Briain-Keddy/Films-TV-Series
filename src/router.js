@@ -19,6 +19,21 @@ export default new Router({
              component: () => import("./pages/Popular.vue")
         },
         {
+            path: '/upcoming',
+            name: 'upcoming',
+            component: () => import("./pages/Upcoming.vue")
+        },
+        {
+            path: '/reviews',
+            name: 'reviews',
+            component: () => import("./pages/Reviews.vue")
+        },
+        {
+            path: '/movie_review',
+            name: 'movie_review',
+            component: () => import("./pages/Movie_Review.vue")
+        },
+        {
             path: '/login',
             name: 'login',
             component: () => import("./pages/Login.vue")

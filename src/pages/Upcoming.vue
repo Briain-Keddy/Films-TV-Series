@@ -2,7 +2,7 @@
   <b-container>
     <b-row cols="12">
       <b-col >
-        <h2>Most Popular Films</h2>
+        <h2>Upcoming Movies</h2>
       </b-col>
     </b-row>
     <b-row cols="4" sm="6"> 
@@ -22,7 +22,7 @@
 import axios from 'axios'
 
 export default {
-  name: "Popular",
+  name: "Upcoming",
   components: {},
   data(){
       return {
@@ -36,7 +36,7 @@ export default {
       getData() {
 
           axios
-            .get(`https://api.themoviedb.org/3/movie/popular?api_key=06fa868e7cce611df3b704bc35194f88`,
+            .get(`https://api.themoviedb.org/3/movie/upcoming?api_key=06fa868e7cce611df3b704bc35194f88`,
             {
               headers: {
               }

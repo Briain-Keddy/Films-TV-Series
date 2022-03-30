@@ -2,7 +2,7 @@
   <b-container>
     <b-row cols="12">
       <b-col >
-        <h2>Most Popular Films</h2>
+        <h2>Reviews</h2>
       </b-col>
     </b-row>
     <b-row cols="4" sm="6"> 
@@ -22,7 +22,7 @@
 import axios from 'axios'
 
 export default {
-  name: "Popular",
+  name: "Review",
   components: {},
   data(){
       return {
@@ -58,4 +58,5 @@ export default {
 .film{
   border-style: solid;
 }
+</style>
 </style>
