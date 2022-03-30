@@ -29,11 +29,6 @@ export default new Router({
             component: () => import("./pages/Reviews.vue")
         },
         {
-            path: '/movie_review/:id',
-            name: 'movie_review',
-            component: () => import("./pages/Movie_Review.vue")
-        },
-        {
             path: '/login',
             name: 'login',
             component: () => import("./pages/Login.vue")
@@ -53,10 +48,17 @@ export default new Router({
             name: "contact",
             component: () => import("./pages/Contact.vue")
         },
+        //////Film id///////
         {
             path: "/film/:id",
             name: "film_show",
             component: () => import("./pages/Film.vue")
+        },
+        {
+            path: '/movie_review/:id',
+            name: 'movie_review',
+            component: () => import("./pages/Movie_Review.vue")
         }
+        ///////////////////
     ]
 })

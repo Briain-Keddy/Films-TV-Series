@@ -1,16 +1,16 @@
 <template>
   <b-row>
     <b-col>
-      <p class="title">
-        {{ film.title }}
+      <p class="review">
+        Reviews
       </p>
       <p
-          v-for="review in this.film.review"
+          v-for="review in this.results"
           :key="review.id"
         >
-          Reviews
+          {{ review.author}}<br>
           {{ review.content }}
-        </p>
+      </p>
     </b-col>
   </b-row>
 </template>
@@ -23,7 +23,7 @@ export default {
   components: {},
   data(){
       return {
-          film: {}
+        results: []
       }
   },
   mounted(){
@@ -31,16 +31,15 @@ export default {
   },
   methods: {
       getData() {
-
           axios
-            .get(`https://api.themoviedb.org/3/movie/review/${this.$route.params.id}?api_key=06fa868e7cce611df3b704bc35194f88`,
+            .get(`https://api.themoviedb.org/3/movie/${this.$route.params.id}/reviews?api_key=06fa868e7cce611df3b704bc35194f88`,
             {
               headers: {
               }
             })
             .then(response => {
                 console.log(response.data)
-                this.film = response.data
+                this.results = response.data.results
 
             })
             .catch(error => {
@@ -52,8 +51,8 @@ export default {
 </script>
 
 <style>
-.title{
-  font-size: 24;
+.review{
+  font-size: 24px;
   font-weight: bold;
 }
 </style>

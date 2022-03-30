@@ -1,14 +1,12 @@
 <template>
   <b-row>
-    <b-col> 
-
+    <b-col>
       <img :src="'https://image.tmdb.org/t/p/w200/'+ film.poster_path">
 
         <p class="title">
           {{ film.title }}
         </p>
           {{ film.overview }}<br>
-
         <p
           v-for="genre in this.film.genres"
           :key="genre.id"
@@ -37,7 +35,6 @@ export default {
   },
   methods: {
       getData() {
-
           axios
             .get(`https://api.themoviedb.org/3/movie/${this.$route.params.id}?api_key=06fa868e7cce611df3b704bc35194f88`,
             {
@@ -45,10 +42,10 @@ export default {
               }
             })
             .then(response => {
-                //console.log(response.data)
+                console.log(response.data)
 
                 this.film = response.data
-                console.log(this.film.genres)
+                //console.log(this.film.genres)
 
             })
             .catch(error => {

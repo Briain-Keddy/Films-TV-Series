@@ -18,11 +18,10 @@
 
 <script>
 
-
 import axios from 'axios'
 
 export default {
-  name: "Review",
+  name: "Reviews",
   components: {},
   data(){
       return {
@@ -34,7 +33,6 @@ export default {
   },
   methods: {
       getData() {
-
           axios
             .get(`https://api.themoviedb.org/3/movie/popular?api_key=06fa868e7cce611df3b704bc35194f88`,
             {
@@ -44,7 +42,6 @@ export default {
             .then(response => {
                 console.log(response.data.results)
                 this.films = response.data.results
-
             })
             .catch(error => {
               console.log(error)
@@ -58,5 +55,4 @@ export default {
 .film{
   border-style: solid;
 }
-</style>
 </style>
