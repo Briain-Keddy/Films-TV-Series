@@ -4,7 +4,13 @@
       <p class="title">
         {{ film.title }}
       </p>
-          
+      <p
+          v-for="review in this.film.review"
+          :key="review.id"
+        >
+          Reviews
+          {{ review.content }}
+        </p>
     </b-col>
   </b-row>
 </template>

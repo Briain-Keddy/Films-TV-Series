@@ -10,8 +10,28 @@
       <a href="http://localhost:8080/upcoming">Upcoming Films</a>
     </b-row>
     <b-row cols="4">
-      <h4>Movie Review</h4>
-      <a href="http://localhost:8080/reviews">Reviews</a>
+      <b-col>
+        <h4>Movie Review</h4>
+        <a href="http://localhost:8080/reviews">Reviews</a>
+      </b-col>
+    </b-row>
+    <b-row cols="4">
+      <b-col>
+        <h4>List of TV Series</h4>
+        <a href="#">List of TV Series</a>
+      </b-col>
+    </b-row>
+    <b-row cols="4">
+      <b-col>
+        <h4>Find Cinema</h4>
+        <a href="#">Find Cinema</a>
+      </b-col>
+    </b-row>
+    <b-row cols="4">
+      <b-col>
+        <h4>Upcoming TV Series</h4>
+        <a href="#">Upcoming TV Series</a>
+      </b-col>
     </b-row>
   </b-container>
 </template>

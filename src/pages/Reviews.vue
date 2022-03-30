@@ -10,7 +10,7 @@
         v-for="film in films"
         :key="film.id"
       >
-        <router-link :to="{name:'film_show', params: {id: film.id}}">{{ film.title }}</router-link> 
+        <router-link :to="{name:'movie_review', params: {id: film.id}}">{{ film.title }}</router-link> 
       </b-col>
     </b-row>
   </b-container>
