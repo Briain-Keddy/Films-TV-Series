@@ -10,6 +10,7 @@
         v-for="film in films"
         :key="film.id"
       >
+        <img :src="'https://image.tmdb.org/t/p/w200/'+ film.poster_path"><br>
         <router-link :to="{name:'film_show', params: {id: film.id}}">{{ film.title }}</router-link> 
       </b-col>
     </b-row>
@@ -17,7 +18,6 @@
 </template>
 
 <script>
-
 
 import axios from 'axios'
 

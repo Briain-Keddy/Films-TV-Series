@@ -19,6 +19,11 @@ export default new Router({
              component: () => import("./pages/Popular.vue")
         },
         {
+            path: '/list_of_tv_show',
+            name: 'tv_series',
+            component: () => import("./pages/List_of_TV_Series.vue")
+        },
+        {
             path: '/upcoming',
             name: 'upcoming',
             component: () => import("./pages/Upcoming.vue")
@@ -58,6 +63,13 @@ export default new Router({
             path: '/movie_review/:id',
             name: 'movie_review',
             component: () => import("./pages/Movie_Review.vue")
+        },
+        ///////////////////
+        //////TV Show id///////
+        {
+            path: "/tv/:id",
+            name: "tv_show",
+            component: () => import("./pages/TvShow.vue")
         }
         ///////////////////
     ]

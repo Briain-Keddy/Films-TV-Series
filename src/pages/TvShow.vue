@@ -1,19 +1,12 @@
 <template>
   <b-row>
     <b-col>
-      <img :src="'https://image.tmdb.org/t/p/w200/'+ film.poster_path">
+      <img :src="'https://image.tmdb.org/t/p/w200/'+ tv.poster_path">
 
         <p class="title">
-          {{ film.title }}
+          {{ tv.name }}
         </p>
-          {{ film.overview }}<br>
-        <p
-          v-for="genre in this.film.genres"
-          :key="genre.id"
-        >
-          Genres
-          {{ genre.name }}
-        </p>
+          {{ tv.overview }}
     </b-col>
   </b-row>
 </template>
@@ -23,11 +16,11 @@
 import axios from 'axios'
 
 export default {
-  name: "Film",
+  name: "Tv",
   components: {},
   data(){
       return {
-          film: {}
+          tv: {}
       }
   },
   mounted(){
@@ -36,7 +29,7 @@ export default {
   methods: {
       getData() {
           axios
-            .get(`https://api.themoviedb.org/3/movie/${this.$route.params.id}?api_key=06fa868e7cce611df3b704bc35194f88`,
+            .get(`https://api.themoviedb.org/3/tv/${this.$route.params.id}?api_key=06fa868e7cce611df3b704bc35194f88`,
             {
               headers: {
               }
@@ -44,7 +37,7 @@ export default {
             .then(response => {
                 console.log(response.data)
 
-                this.film = response.data
+                this.tv = response.data
             })
             .catch(error => {
               console.log(error)

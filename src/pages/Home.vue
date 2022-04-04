@@ -21,7 +21,7 @@
     <b-row cols="3">
       <b-col>
         <h4>List of TV Series</h4>
-        <a href="#">List of TV Series</a>
+        <a href="http://localhost:8080/list_of_tv_show">List of TV Series</a>
       </b-col>
     </b-row>
     <b-row cols="3">
