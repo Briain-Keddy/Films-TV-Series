@@ -44,7 +44,6 @@ export default {
             .then(response => {
                 console.log(response.data.results)
                 this.films = response.data.results
-
             })
             .catch(error => {
               console.log(error)
@@ -57,5 +56,7 @@ export default {
 <style>
 .film{
   border-style: solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 </style>

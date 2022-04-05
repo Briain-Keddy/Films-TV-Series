@@ -57,5 +57,7 @@ export default {
 <style>
 .tv{
   border-style: solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 </style>

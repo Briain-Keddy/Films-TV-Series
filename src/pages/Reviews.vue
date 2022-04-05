@@ -10,6 +10,7 @@
         v-for="film in films"
         :key="film.id"
       >
+        <img :src="'https://image.tmdb.org/t/p/w200/'+ film.poster_path"><br>
         <router-link :to="{name:'movie_review', params: {id: film.id}}">{{ film.title }}</router-link> 
       </b-col>
     </b-row>
@@ -54,5 +55,7 @@ export default {
 <style>
 .film{
   border-style: solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 </style>
