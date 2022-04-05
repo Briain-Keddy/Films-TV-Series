@@ -17,8 +17,7 @@
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
           <router-link class="nav-link" to="/popular">Popular Movies</router-link>
-          <router-link class="nav-link" to="/upcoming">Upcoming Films</router-link>
-          <router-link class="nav-link" to="/login">Login</router-link>
+          <router-link class="nav-link right" to="/login">Login</router-link>
           <router-link class="nav-link" to="/register">Register</router-link>
         </div>
       </div>
@@ -43,4 +42,7 @@ export default {
 </script>
 
 <style>
+.login, .register{
+  float: right;
+}
 </style>

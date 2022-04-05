@@ -13,26 +13,38 @@ export default new Router({
             name: 'home',
             component: Home
         },
+        /////////Films///////////
         {
              path: '/popular',
              name: 'popular',
              component: () => import("./pages/Popular.vue")
         },
         {
+            path: '/upcoming',
+            name: 'upcoming',
+            component: () => import("./pages/Upcoming.vue")
+        },
+        /////////////////////////
+        ////////TV Series////////
+        {
             path: '/list_of_tv_show',
             name: 'tv_series',
             component: () => import("./pages/List_of_TV_Series.vue")
         },
         {
-            path: '/upcoming',
-            name: 'upcoming',
-            component: () => import("./pages/Upcoming.vue")
+            path: '/latest_tv_show',
+            name: 'latest_tv_series',
+            component: () => import("./pages/Latest_TV_Series.vue")
         },
+        /////////////////////////
+        ////////Reviews//////////
         {
             path: '/reviews',
             name: 'reviews',
             component: () => import("./pages/Reviews.vue")
         },
+        //////////////////////////////////
+        ////////Login & Register//////////
         {
             path: '/login',
             name: 'login',
@@ -43,6 +55,8 @@ export default new Router({
             name: 'register',
             component: () => import("./pages/Register.vue")
         },
+        //////////////////////////////////
+        ////////Contact & About//////////
         {
             path: "/about",
             name: "about",
@@ -53,7 +67,8 @@ export default new Router({
             name: "contact",
             component: () => import("./pages/Contact.vue")
         },
-        //////Film id///////
+        /////////////////////////
+        ////////Film id//////////
         {
             path: "/film/:id",
             name: "film_show",
@@ -64,13 +79,13 @@ export default new Router({
             name: 'movie_review',
             component: () => import("./pages/Movie_Review.vue")
         },
-        ///////////////////
-        //////TV Show id///////
+        /////////////////////////
+        ///////TV Show id////////
         {
             path: "/tv/:id",
             name: "tv_show",
             component: () => import("./pages/TvShow.vue")
         }
-        ///////////////////
+        /////////////////////////
     ]
 })

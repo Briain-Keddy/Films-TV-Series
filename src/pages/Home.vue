@@ -2,7 +2,7 @@
   <b-container>
     <b-row cols="12">
       <b-col >
-        <h2>Home Films</h2>
+        <h2>Home</h2>
       </b-col>
     </b-row>
     <b-row cols="12">
@@ -28,8 +28,8 @@
         <a href="#">Find Cinema</a>
       </b-col>
       <b-col>
-        <h4>Upcoming TV Series</h4>
-        <a href="#">Upcoming TV Series</a>
+        <h4>Latest TV Series</h4>
+        <a href="http://localhost:8080/latest_tv_series">Latest TV Series</a>
       </b-col>
     </b-row>
   </b-container>
