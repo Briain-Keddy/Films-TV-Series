@@ -4,12 +4,14 @@
       <p class="review">
         Reviews
       </p>
-      <p
+      <p class="content"
           v-for="review in this.results"
           :key="review.id"
         >
           {{ review.author}}<br>
-          {{ review.content }}
+          <span v-if="!readMore">{{ review.content.slice(0, 200) }}</span>
+          <a class="" v-if="!readMore" @click="activateReadMore" href="#">Read More</a>
+          <span v-if="readMore" v-html="review.content"></span>
       </p>
     </b-col>
   </b-row>
@@ -23,7 +25,8 @@ export default {
   components: {},
   data(){
       return {
-        results: []
+        results: [],
+        readMore: false
       }
   },
   mounted(){
@@ -45,12 +48,20 @@ export default {
             .catch(error => {
               console.log(error)
             })
+      },
+      activateReadMore(){
+        this.readMore = true;
       }
   }
 };
 </script>
 
 <style>
+.content{
+  border-bottom: solid;
+  font-size: 16px;
+  padding-bottom: 20px;
+}
 .review{
   font-size: 24px;
   font-weight: bold;
