@@ -32,7 +32,7 @@ export default new Router({
             component: () => import("./pages/List_of_TV_Series.vue")
         },
         {
-            path: '/latest_tv_show',
+            path: '/latest_tv_series',
             name: 'latest_tv_series',
             component: () => import("./pages/Latest_TV_Series.vue")
         },
@@ -42,6 +42,13 @@ export default new Router({
             path: '/reviews',
             name: 'reviews',
             component: () => import("./pages/Reviews.vue")
+        },
+        //////////////////////////////////
+        ////////Find Cinema///////////////
+        {
+            path: '/find_cinema',
+            name: 'find_cinema',
+            component: () => import("./pages/Find_Cinema.vue")
         },
         //////////////////////////////////
         ////////Login & Register//////////

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-
+console.log("testing")
 import axios from 'axios'
 
 export default {
@@ -42,6 +42,7 @@ export default {
               }
             })
             .then(response => {
+                console.log(response)
                 console.log(response.data.results)
                 this.LatestTvSeries = response.data.results
 

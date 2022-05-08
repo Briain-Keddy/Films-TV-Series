@@ -25,7 +25,7 @@
       </b-col>
       <b-col>
         <h4>Find Cinema</h4>
-        <a href="#">Find Cinema</a>
+        <a href="http://localhost:8080/find_cinema">Find Cinema</a>
       </b-col>
       <b-col>
         <h4>Latest TV Series</h4>

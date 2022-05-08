@@ -8,7 +8,7 @@
           v-for="review in this.results"
           :key="review.id"
         >
-          {{ review.author}}<br>
+          <span class="author">{{ review.author}}</span><br>
           <span v-if="!readMore">{{ review.content.slice(0, 200) }}</span>
           <a class="" v-if="!readMore" @click="activateReadMore" href="#">Read More</a>
           <span v-if="readMore" v-html="review.content"></span>
@@ -57,13 +57,18 @@ export default {
 </script>
 
 <style>
+.author{
+  font-size: 20px;
+}
 .content{
   border-bottom: solid;
   font-size: 16px;
   padding-bottom: 20px;
 }
+.review, .author{
+  font-weight: bold;
+}
 .review{
   font-size: 24px;
-  font-weight: bold;
 }
 </style>

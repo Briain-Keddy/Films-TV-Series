@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row cols="12">
-      <b-col >
+      <b-col>
         <h2>Most Popular Films</h2>
       </b-col>
     </b-row>
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-
 import axios from 'axios'
 
 export default {
